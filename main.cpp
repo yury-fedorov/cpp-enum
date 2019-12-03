@@ -8,22 +8,6 @@ enum Animal {
 	Dog, Cat, Pig
 };
 
-class Enum {
-    string _value;
-public:
-    Enum() { }
-    Enum(const Enum & other) { }
-    Enum(const string & value) : _value(value) { }
-    virtual ~Enum() { }
-
-    virtual set<string> GetValues() const = 0;
-    virtual string GetDefault() const = 0;
-    bool IsValid() const {
-    	const set<string> s = GetValues();
-        return s.find(_value) != s.end();
-    }
-};
-
 template <typename E, typename T>
 class EnumT {
 	E _value;
